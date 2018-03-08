@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Challenge 1</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link type="text/css" href="styles/challenge1.css" rel="stylesheet" />
+		<link rel="stylesheet" href="chartist/dist/chartist.min.css" />
+		<script type="text/javascript" src="chartist/dist/chartist.js"></script>
+	</head>
+	<body>
+		<div id="title">
+			<h1>A trip to mars</h1>
+			<h2>
+				Current situation
+			</h2>
+		</div>
+		<div>
+			<figure class="titlefordesktop rocket">
+				<img src="images/rocket.svg" alt="large rocket on the right side">
+			</figure>
+			<figure class="titlefordesktop arrow">
+				<img src="images/arrow_down.svg" alt="an arrow down to let the user know to scroll down">
+			</figure>
+		</div>
+		<div class="grid-container">
+			<div class="section1 distancebox">
+				<h1 class="titlesection">How far are we &#63;</h1>
+				<div class="distancetomars">
+					<figure class="earth">
+						<img src="images/earth.svg" alt="icon of earth">
+					</figure>
+					<figure class="rocketsmall">
+						<img src="images/rocketsmall.svg" alt="icon of earth">
+					</figure>
+					<div class="dashedline">
+						<p>
+							
+						</p>
+					</div>
+					<figure class="mars">
+						<img src="images/mars.svg" alt="icon of earth">
+					</figure>
+				</div>
+			</div>
+			<div class="section2 foodanddrinks">
+				<div class="subsection1 donutchart">
+					<h1 class="titlesection">Food</h1>
+					<div class="ct-chart ct-square donut" id="fooddonutchart"></div>
+				</div>
+
+				<div class="subsection2 donutchart">
+					<h1 class="titlesection">Drinks</h1>
+					<div class="ct-chart ct-square donut" id="drinksdonutchart"></div>
+				</div>
+
+				<div class="chartfortabletdesktop subsection1">
+					<h1 class="titlesection">Food</h1>
+					<div class="ct-chart ct-octave" id="foodbarchart"></div>
+				</div>
+
+				<div class="chartfortabletdesktop subsection2">
+					<h1 class="titlesection">Drinks</h1>
+					<div class="ct-chart ct-octave" id="drinksbarchart"></div>
+				</div>
+			</div>
+			<div class="section1 clocks">
+				<h1 class="timetitle titlesection">Time</h1>
+				<div class="section2">
+					<div id="earthsection" class="subsection1">
+						<h3>Earth</h3>
+						<div id="clock">
+							<div id="hours"></div>
+							<div id="minutes"></div>
+							<div id="seconds"></div>
+						</div>
+					</div>
+					<div id="marssection" class="subsection2">
+						<h3>Mars</h3>
+						<div id="clock">
+							<div id="hours"></div>
+							<div id="minutes"></div>
+							<div id="seconds"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script 
+			type="text/javascript" src="scripts/challenge1.js">
+		</script>
+	</body>
+</html>

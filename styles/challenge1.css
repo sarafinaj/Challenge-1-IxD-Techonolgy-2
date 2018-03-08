@@ -1,0 +1,984 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:regular,bold|Numans');
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+h1{
+	font-family: 'Noto Sans', sans-serif;
+	color: #FFFBF0;
+} 
+
+h1.titlesection{
+	color: #4F5759;
+	text-align: center;
+}
+
+h2{
+	font-family: 'Numans', sans-serif;
+	color: #FFFBF0;;
+}
+
+h3, p, .ct-label{
+	font-family: 'Numans', sans-serif;
+	color: #4F5759;
+	text-align: center;
+}
+
+#title > h1{
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+div.section1{
+	background-color: #FFF7EE;
+}
+
+div.subsection1, div.subsection2{
+	background-color: #FFF7EE;
+}
+
+/*---KLOKKEN---*/
+
+#clock {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 225px;
+  height: 225px;
+  border: 12px solid #231815;
+  border-radius: 50%;
+  margin: 0 auto;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+#clock:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: black;
+  border: 6px solid #231815;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#hours,
+#minutes,
+#seconds {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+#hours:after, #hours:after, #hours:after,
+#minutes:after,
+#minutes:after,
+#minutes:after,
+#seconds:after,
+#seconds:after,
+#seconds:after {
+  content: "";
+  display: block;
+  margin: 50% 50%;
+  width: 50%;
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  -webkit-animation: clock linear infinite;
+          animation: clock linear infinite;
+}
+
+#hours:after {
+  width: 50px;
+  outline: 3px;
+  -webkit-animation-duration: 86400s;
+          animation-duration: 86400s;
+}
+
+#minutes:after {
+  width: 40px;
+  outline: 4px;
+  -webkit-animation-duration: 3600s;
+          animation-duration: 3600s;
+}
+
+#seconds:after {
+  width: 48%;
+  outline: 2px;
+  -webkit-animation-duration: 60s;
+          animation-duration: 60s;
+}
+
+@-webkit-keyframes clock {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes clock {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+/*---PIECHARTS---*/
+
+/*---OPMAAK SCHERMEN---*/
+
+/*---MOBILE---*/
+@media only screen and (max-width: 667px){
+	body{
+		background: linear-gradient(to bottom left, #8A3B78, #200738);
+	}
+
+	#title{
+		background-color: #8A3B79;
+		padding: 10px 5px 10px 15px;
+		filter: drop-shadow( 5px 5px 5px rgba(0, 0, 0, 0.25));
+		margin-bottom: 30px;
+	}
+
+	#title > h1{
+		font-size: 2.5em;
+	}
+
+	#title > h2{
+		font-size: 1.2em;
+	}
+
+	.titlefordesktop{
+		display: none;
+	}
+
+	h3{
+		padding-top: 5px;
+		margin-bottom: 5px;
+	}
+
+
+	div.grid-container{
+		width: 90%;
+		position: relative;
+		left: 5%;
+		top: 15px;
+	}
+
+	div.section1{
+		margin-bottom: 59px;
+	}
+
+	div.section2{
+		display: grid;
+		grid-template-columns: 48% 48%;
+		grid-column-gap: 4%;
+	} 
+
+	div.subsection1{
+		grid-column: 1/2;
+	}
+
+	div.subsection2{
+		grid-column: 2/3;
+	}
+
+	/*---DISTANCE---*/
+
+	.distancetomars{
+		position: relative;
+		width: 300px;
+		height: 34px;
+		margin-bottom: 10px;
+		margin-top: 50px;
+	}
+
+	.rocketsmall{
+		width: 87px;
+		height: 87px;
+		position: absolute;
+		top: -49px;
+		left: 20px;
+		z-index: 9;
+		-webkit-animation-name: move;
+		-webkit-animation-duration: 120s;
+		animation-name: move;
+    	animation-duration: 120s;
+    	animation-delay: 3s;
+	}
+
+	@-webkit-keyframes move {
+    	from {left: 20px;}
+    	to {left: 220px;}
+	}
+
+	.earth{
+		width: 104px;
+		height: 104px;
+		position: relative;
+		top: -171%;
+		left: -1%;
+	}
+
+	.mars{
+		width: 138px;
+		height: 138px;
+		position: relative;
+		top: -557%;
+		left: 74%;
+	}
+
+	.dashedline{
+		border-color: black;
+		border-style: dashed;
+		border-radius: 10px;
+		letter-spacing: 2px;
+		width: 64%;
+		position: relative;
+		top: -331%;
+		left: 23%;
+	}
+
+	/*---FOODDRINKS---*/
+	div.foodanddrinks{
+		margin-bottom: 40px;
+	}
+
+	.chartfortabletdesktop{
+		display: none;
+	}
+
+
+	/*---TIME---*/
+	#clock{
+		width: 110px;
+  		height: 110px;
+  		border: 8px solid #000000;
+  		margin-bottom: 20px;
+	}
+
+	#hours:after {
+		width: 33px;
+  		outline: 3px solid #8A3B78;
+  		-webkit-animation-duration: 86400s;
+        animation-duration: 86400s;
+	}
+
+	#minutes:after {
+  		width: 40px;
+  		outline: 4px solid #200738;
+  		-webkit-animation-duration: 3600s;
+        animation-duration: 3600s;
+	}	
+
+	#seconds:after {
+  		width: 39px;
+  		outline: 2px solid #4F5759;
+  		-webkit-animation-duration: 60s;
+        animation-duration: 60s;
+	}
+
+	.clocks{
+		margin-bottom: 40px;
+	}
+}
+
+/*---TABLET LANDSCAPE---*/
+@media only screen and (min-width: 668px) and (max-width: 1366px){
+	body{
+		background: linear-gradient(to bottom left, #8A3B78, #200738);
+	}
+
+	#title{
+		background-color: #8A3B79;
+		padding: 10px 5px 10px 15px;
+		filter: drop-shadow( 5px 5px 5px rgba(0, 0, 0, 0.25));
+		margin-bottom: 5%;
+	}
+
+	#title > h1{
+		font-size: 2.5em;
+	}
+
+	#title > h2{
+		font-size: 1.2em;
+	}
+
+	.titlefordesktop{
+		display: none;
+	}
+
+	h1.titlesection{
+		font-size: 2em;
+		position: relative;
+		top: 10px;
+	}
+
+	h3{
+		font-size: 1.5em;
+		width: 174px;
+		position: relative;
+		left: 15px;
+	}
+
+	div.grid-container{
+		position: relative;
+		left: 7%;
+		display: grid;
+		grid-template-columns: 20% 20% 20% 20% 20%;
+		grid-column-gap: 2%;
+		height: 653px;
+	}
+
+	div.section1:nth-child(1){
+		grid-column: 1/2;
+		height: 570px;
+	}
+
+	div.section1:nth-child(3){
+		grid-column: 4/5;
+		height: 570px;
+	}
+
+	div.section2{
+		grid-column: 2/4;
+	}
+
+	div.subsection1, div.subsection2{
+		height: 275px;
+	}
+	/*---DISTANCE---*/
+
+	.distancetomars{
+		position: relative;
+		width: 300px;
+		height: 34px;
+		margin-bottom: 30px;
+		margin-top: 50px;
+	}
+
+	.rocketsmall{
+		width: 107px;
+		height: 107px;
+		position: absolute;
+		top: 297px;
+		left: 41px;
+		z-index: 9;
+		-webkit-animation-name: move;
+		-webkit-animation-duration: 120s;
+		animation-name: move;
+    	animation-duration: 120s;
+    	animation-delay: 3s;
+	}
+
+	@-webkit-keyframes move {
+    	from {bottom: 297px;}
+    	to {top: -5px;}
+	}
+
+	.earth{
+		width: 154px;
+		height: 154px;
+		position: relative;
+		top: 307px;
+		left: 18px;
+	}
+
+	.mars{
+		width: 208px;
+		height: 208px;
+		position: relative;
+		top: -567px;
+		left: -3px;
+	}
+
+
+	#earthsection{
+		position: relative;
+		top: 20px;
+	}
+
+	#marssection{
+		position: relative;
+		top: -27px;
+		height: 0px;
+	}
+
+	.dashedline{
+		border-color: black;
+		border-style: dashed;
+		border-radius: 10px;
+		letter-spacing: 2px;
+		height: 310px;
+		width: 0px;
+		position: relative;
+		top: -114px;
+		left: 92px;
+	}
+
+	/*---FOODDRINKS---*/
+	div.foodanddrinks{
+		margin-bottom: 30px;
+	}
+
+	.subsection1{
+		margin-bottom: 20px;
+	}
+
+	.donut{
+		display: none !important;
+	}
+
+	.donutchart{
+		display: none;
+	}
+
+	#foodbarchart, #drinksbarchart{
+		position: relative;
+		top: 20px;
+		left: -8px;
+	}
+
+	/*---TIME---*/
+
+	.timetitle{
+		margin-bottom: 20px;
+	}
+
+	#clock{
+		width: 150px;
+  		height: 150px;
+  		border: 8px solid #000000;
+  		margin-bottom: 20px;
+  		margin-top: 10px;
+	}
+
+	#hours:after {
+		width: 30px;
+  		outline: 3px solid #8A3B78;
+  		-webkit-animation-duration: 86400s;
+        animation-duration: 86400s;
+	}
+
+	#minutes:after {
+  		width: 45px;
+  		outline: 4px solid #200738;
+  		-webkit-animation-duration: 3600s;
+        animation-duration: 3600s;
+	}	
+
+	#seconds:after {
+  		width: 39px;
+  		outline: 2px solid #4F5759;
+  		-webkit-animation-duration: 60s;
+        animation-duration: 60s;
+	}
+}
+
+/*---KLEIN DESKTOP SCHERM---*/
+@media only screen and (min-width: 1367px) and (max-width: 2280px){
+	body{
+		background: linear-gradient(to bottom left, #8A3B78, #200738);
+	}
+
+	h3{
+		font-size: 1.5em;
+	}
+
+	#title{
+		position: relative;
+		top: 52px;
+	}
+
+	#title > h1{
+		font-size: 9em;
+		width: 48%;
+		position: relative;
+		left: 5%;
+	}
+
+	#title > h2{
+		font-size: 3em;
+		position: relative;
+		left: 5%;
+	}
+
+	.rocket{
+		width: 32%;
+		position: relative;
+		left: 60%;
+		top: -320px;
+	}
+
+	.arrow{
+		width: 13%;
+		position: absolute;
+		left: 43%;
+		top: 75%;
+		opacity: 0;
+		color: #FFFBF0;
+		-webkit-animation-name: move;
+		-webkit-animation-duration: 120s;
+		animation-name: movearrow;
+    	animation-duration: 3s;
+    	animation-delay: 2s;
+    	animation-timing-function: ease-in;
+    	animation-iteration-count: infinite;
+	}
+
+	@-webkit-keyframes movearrow {
+    	0%{opacity: 0}
+    	100%{opacity: 0.5};
+    	from {bottom: 75%;}
+    	to {top: 83%;}
+	}
+
+	div.grid-container{
+		position: relative;
+		left: 10%;
+		top: -230px;
+		display: grid;
+		grid-template-columns: 20% 20% 20% 20%;
+		grid-column-gap: 2%;
+		height: 600px;
+	}
+
+	.section1:nth-child(1),
+	.section1:nth-child(3){
+		height: 721px;
+		width: 200px;
+		top: -650px;
+	}
+
+	.section1:nth-child(1){
+		position: relative;
+		left: 3%;
+		top: 70px;
+	}
+
+	div.section1:nth-child(1){
+		grid-column: 3/4;
+	}
+
+	div.section1:nth-child(3){
+		grid-column: 4/5;
+	}
+
+	div.foodanddrinks{
+		grid-column: 1/3;
+		position: relative;
+		top: -598px;
+	}
+
+	.subsection2:nth-child(4){
+		position: relative;
+		top: 20px;
+	}
+
+	/*---DISTANCE---*/
+
+	div.distancebox > h1:nth-child(1){
+		width: 70%;
+		text-align: center;
+		padding-left: 19%;
+	}
+
+	.distancetomars{
+		position: relative;
+		width: 200px;
+		height: 34px;
+		margin-bottom: 30px;
+		margin-top: 50px;
+		left: -3%;
+		top: 20px;
+	}
+
+	.rocketsmall{
+		width: 127px;
+		position: absolute;
+		top: 417px;
+		left: 40px;
+		z-index: 9;
+		-webkit-animation-name: move;
+		-webkit-animation-duration: 150s;
+		animation-name: move;
+    	animation-duration: 150s;
+    	animation-delay: 3s;
+	}
+
+	@-webkit-keyframes move {
+    	from {bottom: 417px;}
+    	to {top: -14px;}
+	}
+
+	.earth{
+		width: 184px;
+		position: relative;
+		top: 410px;
+		left: 11px;
+	}
+
+	.mars{
+		width: 228px;
+		position: relative;
+		top: -710px;
+		left: -8px;
+	}
+
+	.dashedline{
+		border-color: black;
+		border-style: dashed;
+		border-radius: 10px;
+		letter-spacing: 2px;
+		height: 412px;
+		width: 0px;
+		position: relative;
+		top: -140px;
+		left: 100px;
+	}
+
+	/*---FOODDRINKS---*/
+	div.foodanddrinks{
+		position: relative;
+		top: -650px;
+	}
+
+	.subsection1{
+		margin-bottom: 20px;
+	}
+
+	.donut{
+		display: none !important;
+	}
+
+	.donutchart{
+		display: none;
+	}
+
+	/*---TIME---*/
+
+	.section2{
+		position: relative;
+		top: 8%;
+	}
+
+	#marssection{
+		position: relative;
+		top: 74px;
+	}
+
+	.timetitle{
+		margin-bottom: 20px;
+	}
+
+	#clock{
+		width: 150px;
+  		height: 150px;
+  		border: 8px solid #000000;
+  		margin-top: 10px;
+	}
+
+	#hours:after {
+		width: 30px;
+  		outline: 3px solid #8A3B78;
+  		-webkit-animation-duration: 86400s;
+        animation-duration: 86400s;
+	}
+
+	#minutes:after {
+  		width: 45px;
+  		outline: 4px solid #200738;
+  		-webkit-animation-duration: 3600s;
+        animation-duration: 3600s;
+	}	
+
+	#seconds:after {
+  		width: 39px;
+  		outline: 2px solid #4F5759;
+  		-webkit-animation-duration: 60s;
+        animation-duration: 60s;
+	}
+
+	.clocks{
+		margin-bottom: 40px;
+		position: relative;
+		top: -652px;
+	}
+}
+
+/*---GROOT DESKTOP SCHERM---*/
+@media only screen and (min-width: 2520px) and (max-width: 2660px){
+	body{
+		background: linear-gradient(to bottom left, #8A3B78, #200738);
+	}
+
+	div.grid-container{
+		position: relative;
+		left: 8%;
+		top: 25px;
+		display: grid;
+		grid-template-columns: 20% 20% 20% 20% 20%;
+		grid-column-gap: 2%;
+	}
+
+	div.section1:nth-child(1){
+		grid-column: 3/4;
+	}
+
+	div.section1:nth-child(3){
+		grid-column: 4/5;
+	}
+
+	div.section2{
+		grid-column: 1/3;
+	}
+
+	#title{
+		position: relative;
+		top: 80px;
+	}
+
+	#title > h1{
+		font-size: 12em;
+		width: 48%;
+		position: relative;
+		left: 5%;
+		top: 90px;
+	}
+
+	#title > h2{
+		font-size: 5em;
+		position: relative;
+		left: 5.5%;
+		top: 140px;
+	}
+
+	h3{
+		font-size: 1.5em;
+	}
+
+	.rocket{
+		width: 32%;
+		position: relative;
+		left: 60%;
+		top: -450px;
+	}
+
+	.arrow{
+		width: 13%;
+		position: absolute;
+		left: 43%;
+		top: 75%;
+		opacity: 0;
+		color: #FFFBF0;
+		-webkit-animation-name: move;
+		-webkit-animation-duration: 120s;
+		animation-name: movearrow;
+    	animation-duration: 3s;
+    	animation-delay: 2s;
+    	animation-timing-function: ease-in;
+    	animation-iteration-count: infinite;
+	}
+
+	@-webkit-keyframes movearrow {
+    	0%{opacity: 0}
+    	100%{opacity: 0.5};
+    	from {bottom: 75%;}
+    	to {top: 83%;}
+	}
+
+	.section1:nth-child(1),
+	.section1:nth-child(3){
+		height: 1220px;
+		width: 400px;
+	}
+
+	.section1:nth-child(1){
+		position: relative;
+		left: 2%;
+	}
+
+	div.section1:nth-child(1){
+		grid-column: 3/4;
+	}
+
+	div.section1:nth-child(3){
+		grid-column: 4/5;
+		grid-row: 1/2;
+	}
+
+	div.section2{
+		grid-column: 1/3;
+		grid-row: 1/2;
+	}
+
+	/*---DISTANCE---*/
+
+	div.distancebox > h1:nth-child(1){
+		width: 70%;
+		text-align: center;
+		padding-left: 14%;
+	}
+
+	h1.titlesection{
+		padding-top: 40px;
+		font-size: 3em;
+	}
+
+	.distancetomars{
+		position: relative;
+		width: 200px;
+		height: 34px;
+		margin-bottom: 30px;
+		margin-top: 50px;
+		left: -3%;
+		top: 40px;
+	}
+
+	.rocketsmall{
+		width: 247px;
+		position: absolute;
+		top: 627px;
+		left: 90px;
+		z-index: 9;
+		-webkit-animation-name: move;
+		-webkit-animation-duration: 150s;
+		animation-name: move;
+    	animation-duration: 150s;
+    	animation-delay: 3s;
+	}
+
+	@-webkit-keyframes move {
+    	from {bottom: 627px;}
+    	to {top: 5px;}
+	}
+
+	.earth{
+		width: 350px;
+		position: relative;
+		top: 650px;
+		left: 31px;
+	}
+
+	.mars{
+		width: 504px;
+		position: relative;
+		top: -1160px;
+		left: -48px;
+	}
+
+	.dashedline{
+		border-color: black;
+		border-width: 0.5em;
+		border-style: dashed;
+		border-radius: 10px;
+		letter-spacing: 2px;
+		height: 600px;
+		width: 0px;
+		position: relative;
+		top: -209px;
+		left: 198px;
+	}
+
+	/*---FOODDRINKS---*/
+	div.foodanddrinks{
+		margin-bottom: 30px;
+	}
+
+	.subsection1{
+		margin-bottom: 20px;
+	}
+
+	.donut{
+		display: none !important;
+	}
+
+	.donutchart{
+		display: none;
+	}
+
+	.chartfortabletdesktop{
+		position: relative;
+		left: 20px;
+		height: 600px;
+	}
+
+	#foodbarchart, #drinksbarchart{
+		position: relative;
+		top: -30px;
+	}
+
+	div.chartfortabletdesktop > h1.titlesection{
+		position: relative;
+		top: -30px;
+	}
+
+	.ct-label{
+		font-size: 1em !important;
+	}
+
+	/*---TIME---*/
+
+	.section2{
+		position: relative;
+		top: 15%;
+	}
+
+	#earthsection{
+		position: relative;
+		top: -40px;
+	}
+
+	#marssection{
+		position: relative;
+		top: 80px;
+	}
+
+	.timetitle{
+		margin-bottom: 20px;
+	}
+
+	#clock{
+		width: 280px;
+  		height: 280px;
+  		border: 8px solid #000000;
+  		margin-top: 10px;
+	}
+
+	#hours:after {
+		width: 60px;
+  		outline: 3px solid #8A3B78;
+  		-webkit-animation-duration: 86400s;
+        animation-duration: 86400s;
+	}
+
+	#minutes:after {
+  		width: 95px;
+  		outline: 4px solid #200738;
+  		-webkit-animation-duration: 3600s;
+        animation-duration: 3600s;
+	}	
+
+	#seconds:after {
+  		width: 89px;
+  		outline: 2px solid #4F5759;
+  		-webkit-animation-duration: 60s;
+        animation-duration: 60s;
+	}
+
+	.clocks{
+		margin-bottom: 40px;
+	}
+}	
